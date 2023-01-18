@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShellLearnApp1.MainPage"
+             xmlns:views="clr-namespace:ShellLearnApp1.Views">
+    <!-- 頁眉 -->
+    <Shell.FlyoutHeader>
+        <StackLayout>
+            <Label Text="請選擇功能"
+                   BackgroundColor="CornflowerBlue"
+                   FontSize="40"
+                   HeightRequest="80"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </Shell.FlyoutHeader>
+
+    <!--頁腳-->
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Label Text="版權擁有者 : 地球人"
+                   BackgroundColor="GreenYellow"
+                   FontSize="30"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+    <!-- 飛出視窗中第一個菜單項，也就是當第一個選項被點擊後，畫面裡會有的東西 -->
+    <!-- 這可以叫做飛出項 -->
+    <FlyoutItem Icon="Home.png" Title="首頁">
+        <!-- 一個Tab就是一個選項夾，也就是螢幕最下方那三個功能 -->
+        <!-- 這可以叫做底部選項卡 -->
+        <Tab Icon="Home_home.png" Title="首頁">
+            <!-- 當選項卡中有兩個以上的內容，則會將選項顯示在上方 -->
+            <!-- 這可以叫做頂部選項卡 -->
+            <ShellContent ContentTemplate="{DataTemplate views:Page1}" Title="第一"/>
+            <ShellContent ContentTemplate="{DataTemplate views:Page2}" Title="第二"/>
+        </Tab>
+        <Tab Icon="Home_video.png" Title="影片">
+            <ShellContent ContentTemplate="{DataTemplate views:Page2}"/>
+        </Tab>
+        <Tab Icon="Home_user.png" Title="我的">
+            <ShellContent ContentTemplate="{DataTemplate views:Page3}"/>
+        </Tab>
+    </FlyoutItem>
+
+    <!-- 飛出視窗中第二個菜單項，也就是當第二個選項被點擊後，畫面裡會有的東西 -->
+    <FlyoutItem Icon="Help.png" Title="幫助">
+        <!-- 當只有一個Tab時代表就直接顯示了!因為沒有其他選擇，所以也不用設置Title跟icon -->
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:Page4}"/>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Icon="Setting.png" Title="設置">
+        <!-- 當只有一個Tab時代表就直接顯示了!因為沒有其他選擇，所以也不用設置Title跟icon -->
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:Page5}"/>
+        </Tab>
+    </FlyoutItem>
+
+    <!-- 接下來設計的兩個功能不是在APP中完成，所以用MenuItem -->
+    <!-- 這也可以叫做飛出菜單 -->
+    <MenuItem Text="電話" IconImageSource="Phone.png" Clicked="PhoneIcon_Clicked"/>
+    <MenuItem Text="關於我們" IconImageSource="About.png" Clicked="AboutIcon_Clicked"/>
+
+
+
+
+</Shell>

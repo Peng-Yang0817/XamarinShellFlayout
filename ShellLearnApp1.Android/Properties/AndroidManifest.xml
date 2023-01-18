@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.shelllearnapp1">
+    <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="31" />
+    <application android:label="ShellLearnApp1.Android" android:theme="@style/MainTheme"></application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	
+	<!-- 給予打開撥號功能的權限 -->
+	<queries>
+		<intent>
+			<action android:name="android.intent.action.DIAL" />
+			<data android:scheme="tel"/>
+		</intent>
+	</queries>
+	
+</manifest>
